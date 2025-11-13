@@ -60,7 +60,7 @@ function renderSAIL(node){
   switch(node.type){
     case "formLayout":
       el=document.createElement("div"); el.className="formLayout";
-      if(node.props.label){ const h2=document.createElement("h1"); h2.textContent=node.props.label; el.appendChild(h2);}
+      if(node.props.label){ const h2=document.createElement("h2"); h2.textContent=node.props.label; el.appendChild(h2);}
       (node.props.contents||[]).forEach(child=>{ el.appendChild(renderSAIL(child)); });
       break;
     case "textField":
