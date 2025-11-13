@@ -119,12 +119,33 @@ functionDocs.innerHTML=funcs.map(f=>`
 editor.value = `a_formLayout({
   label: "User Form",
   contents: [
-    a_textField({ label:"Name", value:"John Doe", saveInto:"name" }),
-    a_dropdownField({ label:"Role", choices:[{label:"Admin",value:"admin"},{label:"User",value:"user"}], saveInto:"role" }),
-    a_if(state.role==="admin", a_textField({ label:"Admin Code", value:"", saveInto:"code" })),
-    a_buttonWidget({ label:"Submit" })
+    a_textField({
+      label: "Name",
+      value: "Aman Shekh",
+      saveInto: "name"
+    }),
+    a_dropdownField({
+      label: "Role",
+      choices: [
+        { label: "Admin", value: "admin" },
+        { label: "User", value: "user" }
+      ],
+      saveInto: "role"
+    }),
+    a_if(
+      state.role === "admin",
+      a_textField({
+        label: "Admin Code",
+        value: "",
+        saveInto: "code"
+      })
+    ),
+    a_buttonWidget({
+      label: "Submit"
+    })
   ]
-})`;
+});
+`;
 
 function evaluateSAIL(){
   try{
