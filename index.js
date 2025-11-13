@@ -151,4 +151,5 @@
     }
 
     editor.addEventListener("input", renderApp);
+    
     renderApp();
